@@ -1,4 +1,5 @@
 @Library('roboshop') _
 
 env.component = "shipping"
-java()
+env.appType = "java"
+cipipeline()
