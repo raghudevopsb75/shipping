@@ -1,0 +1,19 @@
+appName: shipping
+appVersion: 2.0.1
+replicas: 2
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+initContainers:
+  enabled: true
+  imageVersion: 2.0.2
+  INPUT: "DB_HOST,prod.roboshop.rds.endpoint CART_ENDPOINT,prod.roboshop.shipping.CART_ENDPOINT"
+
+job:
+  enabled: true
+  INPUT: "RDS_ENDPOINT,prod.roboshop.rds.endpoint RDS_USER,prod.roboshop.rds.master_username RDS_PASS,prod.roboshop.rds.master_password"
+  imageVersion: 2.0.6
+
+
