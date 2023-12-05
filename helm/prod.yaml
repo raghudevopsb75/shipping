@@ -16,4 +16,10 @@ job:
   INPUT: "RDS_ENDPOINT,prod.roboshop.rds.endpoint RDS_USER,prod.roboshop.rds.master_username RDS_PASS,prod.roboshop.rds.master_password"
   imageVersion: 2.0.6
 
-
+resources:
+  requests:
+    memory: "3000Mi"
+    cpu: "900m"
+  limits:
+    memory: "3500Mi"
+    cpu: "1100m"
